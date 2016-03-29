@@ -11,13 +11,13 @@
 # (Using that method instead of site.owner, in case your posts get cloned with your repo.)
 
 # Site settings
-title: arkadianriver
+title: Southeastern Triathlon Collegiate Conference
 description: Flowing creativity &#x2192; Cascading bliss
 owner:
   name: Alex Pawlowski # or company name
-  email: gfair@arkadianriver.com
+  email: apawlows@vols.utk.edu
   url: sectc.org
-first_published: 2015 # if migrating another site, the year of your first publish
+first_published: 2016 # if migrating another site, the year of your first publish
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "sectc.org" # the base hostname & protocol for your site
 
@@ -25,12 +25,12 @@ url: "sectc.org" # the base hostname & protocol for your site
 # - set the greeting only if you want to display the first green section
 greeting:
   title: Welcome!  
-  text: I hope you enjoy my collection
+  text: We're currently building the site!
 # - title for your blog's featured posts
 features-title: Featured topics
 # - displayed at the bottom
 closing-head: Thanks for visiting
-closing-para: Feel free to get in touch. Cheers!
+closing-para: Feel free to get in touch. Thanks!
 
 # choose where to put back and next links:
 # top, bottom, both, none
