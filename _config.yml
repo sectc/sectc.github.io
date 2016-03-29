@@ -14,12 +14,12 @@
 title: arkadianriver
 description: Flowing creativity &#x2192; Cascading bliss
 owner:
-  name: Gary Faircloth # or company name
+  name: Alex Pawlowski # or company name
   email: gfair@arkadianriver.com
-  url: http://arkadianriver.com
-first_published: 1996 # if migrating another site, the year of your first publish
+  url: sectc.org
+first_published: 2015 # if migrating another site, the year of your first publish
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "sectc.github.io" # the base hostname & protocol for your site
+url: "sectc.org" # the base hostname & protocol for your site
 
 # on landing page
 # - set the greeting only if you want to display the first green section
@@ -41,11 +41,11 @@ works_in_progress: yes
 
 # on all pages (and the first three you list display with greeting, if included)
 social:
-  twitter: https://twitter.com/arkadianriver
-  github: https://github.com/arkadianriver
-  linkedin-square: https://linkedin.com/in/arkadianriver
-  facebook-official: https://facebook.com/gary.faircloth
-  google-plus-square: https://plus.google.com/u/0/+GaryFaircloth
+  twitter: https://twitter.com/alexpawlowski
+  github: https://github.com/sectc
+  linkedin-square: https://linkedin.com/in/alexpawlowski
+  facebook-official: 
+  google-plus-square: https://plus.google.com/u/0/+AlexPawlowski
   email: /contact/
   #flickr:
   #instagram:
