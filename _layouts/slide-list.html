@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<section class="post-list">
+
+  <header class="post-header intro">
+    <div class="intro-in">
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.subtitle %}
+        <h2 class="intro-subtitle">{{ page.subtitle }}</h2>
+      {% endif %}
+    </div>
+  </header>
+
+  {% for slide in site.slides %}
+    <article class="post-item container">
+      <header>
+        <span class="post-meta">{{ slide.date | date: "%b %-d, %Y" }}</span>
+        <h1 class="post-title">
+          <a class="post-link" href="{{ slide.url | prepend: site.baseurl }}">{{ slide.title }}</a>
+        </h1>
+      </header>
+
+      <p>{{ slide.description | strip_html | truncatewords: 56 }} <a href="{{ post.url | prepend: site.baseurl }}" title="Permalink to: {{ slide.title }}" class="read-more">View slides</a></p>
+    </article>
+  {% endfor %}
+
+</section>

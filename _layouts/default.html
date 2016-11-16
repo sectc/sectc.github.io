@@ -1,39 +1,50 @@
 <!DOCTYPE html>
-<!--
-  Original Design: Spectral by HTML5 UP
-    html5up.net | @n33co
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-  Jekyll build mod and further hacks by @arkadianriver, MIT license
--->
 <html>
 
   {% include head.html %}
+  {% if page.custom_js %}
+    {% for script in page.custom_js%}
+    <script src="/assets/js/{{script}}.js"></script>
+    {% endfor %}
+  {% endif %}
 
-  <body>
+  <body{% if page.body_class %} class="{{ page.body_class }}{% endif %}">
 
-    <!-- Page Wrapper -->
-    <div id="page-wrapper">
-
+    <main class="wrapper">
       {% include header.html %}
-
-      <article{%
-        if page.background-image %} id="main"{%
-        elsif page.options contains 'minihead' %} id="minihead"{%
-        else %} id="standard"{%
-        endif %}>
-
-        {% include header-inner.html %}
-
-        {{ content }}
-
-      </article>
-
+      {{ content }}
       {% include footer.html %}
+    </main>
 
-      {% include scripts.html %}
+    {% include scripts.html %}
+   <!--<script>
+    window.addEventListener("resize", myFunction);
+    myFunction();
+    function myFunction() {
+      // Query the element to set the background image property
+      var element = document.getElementsByTagName('header')[1];
+      var dimensions = element.getClientRects()[0];
+      // Create the Trianglify pattern
+      var pattern = Trianglify({
+          cell_size: 60,
+          variance: 0.91,
+          x_colors: 'RdBu',
+          y_colors: 'match_x',
+          palette: Trianglify.colorbrewer,
+          stroke_width: 1.51,
+          width: dimensions.width,
+          height: dimensions.height
+      });
 
-    </div>
+      // Serialize the SVG object to a String
+      var m = new XMLSerializer().serializeToString(pattern.svg());
 
+      // Perform the base64 encoding of the String
+      var k = window.btoa(m);
+
+      // Set the background image property, including the encoding type header
+      element.style.backgroundImage = 'url("data:image/svg+xml;base64,' + k + '")';
+    }
+    </script>-->
   </body>
-
-</html>
+</html><!-- by nandomoreira.me -->

@@ -1,41 +1,40 @@
-## arkadianriver.com
+# .X [![Build Status](https://travis-ci.org/nandomoreirame/dotX.svg?branch=master)](https://travis-ci.org/nandomoreirame/dotX)
 
-Still in progress.
+> Simple & Beautiful Jekyll theme
 
-```sh
-✔ pushd new-site
-✔ human init new-site
-✔ human apply-design
-✔ human edit
-✔ human backup existing-site
-✔ human push new-site
-* human cherry-pick -from existing-site
-human ditch existing-site
-> Are you sure? n
-human considers "meaning of life"
-> "meaning of life" unknown.
-human ditch existing-site --force=true
-popd
-```
+### [Demo](https://nandomoreira.me/dotX/)
 
-The framework is close to complete. I'll probably only tweak things if I discover it's
-necessary for the additional posts and portfolio to come.
+![dotX - free Jekyll theme](/screenshot.png)
 
-### How to
+---
 
-If you clone or fork this repository for your own, you'll want to..
+### Start in 4 steps
 
-- Edit the `_config.yml` file, add a `_data/tokens.yml` file with your IDs & mail program,
-  and add author info for yourself in `_data/authors.yml`.
-- Use the posts in the 31st century as guides for yours. They're built by jekyll only when
-  the `--future` option is used.
-- Provide your images and continue tweaking to your heart's desire, or not.
+1. Download or clone repo `git clone git@github.com:nandomoreirame/dotX.git`
+2. Enter the folder: `cd dotX/`
+3. Install Ruby gems: `bundle install`
+4. Start Jekyll server: `jekyll serve`
 
-If you're building your site on Windows (like me) and you use WinSCP to sync with your
-remote site, you can use the `site.bat` file. Set up a `_site.env` file
-as described in the comments of `site.bat` and change the excludes list for your site.
+Access, [localhost:4000/dotX](http://localhost:4000/dotX)
 
-- `site dev` : runs `jekyll serve --future --drafts` in development mode
-- `site preview` : runs `jekyll serve` in production mode
-- `site prod` : simply builds with `jekyll build` in production mode (no serve)
-- `site publish` : Uses WinSCP's `synchronize` feature to mirror to a remote site
+### Deploy in Github pages in 2 steps
+
+1. Change the variables `GITHUB_REPONAME` and `GITHUB_REPO_BRANCH` in `Rakefile`
+2. Run `rake` or `rake publish` for build and publish on Github
+
+---
+
+### Using Rake tasks
+
+* Create a new page: `rake page name="contact.md"`
+* Create a new post: `rake post title="TITLE OF THE POST"`
+
+---
+
+### Copyright and license
+
+It is under [the MIT license](/LICENSE).
+
+Enjoy :yum:
+
+by [nandomoreira.me](https://nandomoreira.me)

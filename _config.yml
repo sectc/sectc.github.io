@@ -1,108 +1,45 @@
 # Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
+sass:
+  sass_dir: _sass
+  style: expanded # compressed # expanded
 
-# In addition to these settings, there is a file _data/tokens-template.yml
-# that you'll want to customize for your site. It's named 'tokens' because
-# that was it's original purpose, but because tokens.yml is .gitexcluded, it's
-# a good place to store your site-specific data that you'd rather not have
-# forked or cloned. Of course, that means you'd want to back it up elsewhere.
+# permalink and highlighter
+permalink   : /:year/:title/
+markdown    : kramdown
+highlighter : rouge
 
-# Also, for your post bylines, add author info for yourself in `_data/authors.yml`.
-# (Using that method instead of site.owner, in case your posts get cloned with your repo.)
+# SEO settings
+title: Southeastern Triathlon Collegiate Conference
+description: "USA Triathlon Conference for Collegiate Clubs in SC, GA, TN, and AL"
+keywords: "triathlon, southeast, college, USAT"
 
 # Site settings
-title: Southeastern Triathlon Collegiate Conference
-description: USA Triathlon Conference for Collegiate Clubs in SC, GA, TN, and AL
-owner:
-  name: Alex Pawlowski # or company name
-  email: apawlows@vols.utk.edu
-  url: sectc.org
-first_published: 2016 # if migrating another site, the year of your first publish
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "sectc.org" # the base hostname & protocol for your site
+url: http://sectc.org
+baseurl: ""
+# baseurl: ""
 
-# on landing page
-# - set the greeting only if you want to display the first green section
-greeting:
-  title: Welcome!  
-  text: We're currently building the site!
-# - title for your blog's featured posts
-features-title: Featured topics
-# - displayed at the bottom
-closing-head: Thanks for visiting
-closing-para: Feel free to get in touch. Thanks!
+# Author settings
+author:
+  name      : Alex Pawlowski
+  job       : Co-organizer
+  bio       : "Webmaster for SECTC"
+  thumb     : /images/author.jpg
+  email     : organizer@sectc.org
+  url       : http://sectc.org
+  twitter   : https://twitter.com/knoxdatasci
 
-# choose where to put back and next links:
-# top, bottom, both, none
-navlinks: bottom
+google_analytics: UA-44543225-4
+repo: http://github.com/sectc/sectc.github.io
 
-# expecting more works? mark your list as in-progress
-works_in_progress: yes
+# comments
+#disqus_shortname: "knoxdata"
 
-# on all pages (and the first three you list display with greeting, if included)
-social:
-  twitter: https://twitter.com/alexpawlowski
-  github: https://github.com/sectc
-  linkedin-square: https://linkedin.com/in/alexpawlowski
-  facebook-official: 
-  google-plus-square: https://plus.google.com/u/0/+AlexPawlowski
-  email: /contact/
-  #flickr:
-  #instagram:
-  #youtube-square:
-  #spotify:
-  #stack-overflow:
-  #vimeo:
-  #reddit:
-  #stubleupon:
-  #delicious:
-  #pied-piper:
-  #digg:
-  #soundcloud:
-  #deviantart:
-  #angellist:
-  #tumblr-square:
-  #stackexchange:
-  #weibo:
-  #trello:
-  #foursquare:
-  #linux:
-  #bitbucket-square:
-  #vk:
-  #slack:
-  #vine:
-  #weixin:
-  #yelp:
-  #skyatlas:
-  #leanpub:
-  #connectdevelop:
-  #ils:
-  #forumbee:
-  #tripadvisor:
-  #amazon:
-
-# Build settings
-permalink: /:categories/:title.html
-markdown: kramdown
-#sass:
-#  style: compressed
-exclude: ['site.bat']
-include: ['_pages','.htaccess']
-defaults:
-  - scope:
-      path: _pages
-    values:
-      layout: page
-      #permalink: /:slug/ # dunna work. See github.com/jekyll/jekyll/issues/2280
-  - scope:
-      path: _posts
-    values:
-      layout: post
-  - scope:
-      path: _drafts
-    values:
-      layout: post
-
-# to initialize arrays in assignments (assign myarr = site.empty_array)
-# (easier to grok than assign myarr = '' | split',')
-empty_array: []
+gems:
+  - github-pages
+  - jekyll-sitemap

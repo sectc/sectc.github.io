@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+      {% include head-slide.html %}
+	</head>
+	<body>
+      {{ content }}
+
+		<script src="{{ site.url }}/assets/js/reveal.js-3.3.0/lib/js/head.min.js"></script>
+		<script src="{{ site.url }}/assets/js/reveal.js-3.3.0/js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+        center: false,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '{{ site.url }}/assets/js/reveal.js-3.3.0/plugin/markdown/marked.js' },
+					{ src: '{{ site.url }}/assets/js/reveal.js-3.3.0/plugin/markdown/markdown.js' },
+					{ src: '{{ site.url }}/assets/js/reveal.js-3.3.0/plugin/notes/notes.js', async: true },
+					{ src: '{{ site.url }}/assets/js/reveal.js-3.3.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
