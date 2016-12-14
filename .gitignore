@@ -4,3 +4,4 @@ _site
 Gemfile.lock
 deploy.sh
 .travis.yml
+.Rproj.user
