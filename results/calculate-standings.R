@@ -1,28 +1,40 @@
 library(tibble)
 library(readr)
+library(dplyr)
+standings.M <- subset(races.1, select = c("Name.First", "Name.Last", "College")) %>%
+  add_column("Race 1" = 101-races.1$Place, .after = "College")
 
-races.count = 9
-races.year = 2016
-races.1 = read_tsv(paste0('results/',races.year,'/race-',1,'_','M','.tsv'), skip = 1,
-                   col_names = c('Place',	'Bib',	'Name',	'College',	'Swim.Rank',	'Swim',	
-                                 'T1.Rank',	'T1',	'Bike.Rank',
-                                  'Bike',	'T2.Rank',	'T2',	'Run.Rank',	'Run',	'Penalty',	'Time',	'DQ'),
-                   col_types = cols(
-                     'Place' = "n",
-                     'Bib'   = "i",
-                     'Swim.Rank' = "i",
-                     #'Swim'  = col_time(format = '%M:%S'),
-                     'T1.Rank' = "i",
-                     #'T1' = col_time(format = '%M:%S'),
-                     'Bike.Rank' = "i",
-                     'Bike' = col_time(format = '%M:%S'),
-                     'T2.Rank' = "i",
-                     #'T2' = col_time(format = '%M:%S'),
-                     'Run.Rank' = "i",
-                     'Run' = col_time(format = '%M:%S'),
-                     #'Time' = col_time(format = '%T'),
-                     .default = "c")
-)
-#Parse into time
-#
-races.1$Swim <-col_time(parse_time(paste0(0,races.1$Swim), format = '%M:%S'))
+races.1.M.Place <- races.1.M %>%
+  select(Name.First,Name.Last, College, Place) %>%
+  add_column("Name" = paste0(races.1.M$Name.First,".",races.1.M$Name.Last))
+races.2.M.Place <- races.2.M %>%
+  select(Name.First,Name.Last, College, Place) %>%
+  add_column("Name" = paste0(races.2.M$Name.First,".",races.2.M$Name.Last))
+
+x1 <- full_join(races.1.M.Place,races.2.M.Place, by = "Name")
+namesNA <- is.na(x1$Name.First.x)
+x1$Name.First.x[namesNA] <- x1$Name.First.y[namesNA]
+x1$Name.Last.x[namesNA] <- x1$Name.Last.y[namesNA]
+x1$College.x[namesNA] <- x1$College.y[namesNA]
+
+x1.M <- select(x1, -(Name.First.y:College.y)) %>%
+      rename(Name.First = Name.First.x,
+             Name.Last = Name.Last.x,
+             College = College.x,
+             Race.1 = Place.x,
+             Race.2 = Place.y
+             )
+
+
+
+
+
+x1.M <- select(x1.M, Name, everything())
+
+x1.M <- mutate(x1.M,
+               Race.1.Pts = 101-Race.1,
+               Race.2.Pts = 101-Race.2)
+
+x1.M <- x1.M %>%
+  rowwise() %>%
+  mutate(Race.Sum.Pts = sum(Race.1.Pts,Race.2.Pts, na.rm = TRUE))
