@@ -27,14 +27,12 @@ baseurl: ""
 # Author settings
 author:
   name      : Alex Pawlowski
-  job       : Co-organizer
+  job       : Webmaster
   bio       : "Webmaster for SECTC"
   thumb     : /images/author.jpg
-  email     : organizer@sectc.org
-  url       : http://sectc.org
-  twitter   : https://twitter.com/knoxdatasci
+  email     : #
+  url       : https://sectc.github.io
 
-google_analytics: UA-44543225-4
 repo: http://github.com/sectc/sectc.github.io
 
 # comments
